@@ -1,40 +1,21 @@
-# Welcome to Remix!
+# Recipe Helper
 
-- 📖 [Remix docs](https://remix.run/docs)
+**Order Helper** is a web application that allows users to input a single ingredient and receive a variety of meal ideas based on that ingredient. It’s designed to help home cooks and food enthusiasts find inspiration in their kitchens!
 
-## Development
+## Technologies Used
 
-Run the dev server:
+- **Frontend and Backend**: [Remix](https://remix.run)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com)
 
-```shellscript
-npm run dev
-```
+## Installation
 
-## Deployment
+To get started with the Recipe Helper app, follow these steps:
 
-First, build your app for production:
+### Prerequisites
 
-```sh
-npm run build
-```
+Before you begin, ensure you have the following installed on your machine:
 
-Then run the app in production mode:
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- You may have to install dependicies to run a Remix app.
 
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
