@@ -1,11 +1,6 @@
-import type {
-  ActionFunctionArgs,
-  LoaderFunction,
-  LoaderFunctionArgs,
-  MetaFunction,
-} from "@vercel/remix";
+import type { LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
 import { json } from "@vercel/remix";
-import { Form, useLoaderData, useSearchParams } from "@remix-run/react";
+import { Form, useActionData } from "@remix-run/react";
 import * as search from "../api/json/v1/1/search.php";
 import { useState } from "react";
 import { RecipeDetail } from "~/components/RecipeDetail";
@@ -17,16 +12,20 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function action({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url);
+  const formData = await request.formData();
+  if (formData.has("s")) {
+    url.searchParams.set("s", formData.get("s") as string);
+  }
+
   const response = await search.GET(url);
   const data = await response.json();
   return json(data);
 }
 
 export default function Index() {
-  const [searchParams] = useSearchParams();
-  const loaderData = useLoaderData<typeof loader>();
+  const actionData = useActionData<typeof action>();
   const [activeMeal, setActiveMeal] = useState<search.Meal | null>(null);
   return (
     <div className="container mx-auto p-5">
@@ -41,7 +40,7 @@ export default function Index() {
           View Source Code on GitHub
         </a>
 
-        <Form className="flex justify-center mb-10">
+        <Form className="flex justify-center mb-10" method="POST">
           <input
             name="s"
             type="text"
@@ -54,8 +53,15 @@ export default function Index() {
         </Form>
       </header>
       <div className="flex flex-wrap justify-center gap-5">
-        {loaderData.meals?.map((meal) => (
+        {actionData?.meals?.map((meal) => (
           <div
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                setActiveMeal(meal);
+              }
+            }}
             onClick={() => setActiveMeal(meal)}
             key={meal.idMeal}
             className="bg-white border border-gray-200 rounded-lg overflow-hidden w-96 cursor-pointer transition transform hover:scale-105 shadow-md"
