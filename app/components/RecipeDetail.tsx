@@ -8,10 +8,10 @@ export function RecipeDetail({
   onClose(): void;
 }) {
   return (
-    <div
-      className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50"
-      onClick={onClose}
-    >
+    // <div
+    //   className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50"
+    //   onClick={onClose}
+    // >
       {/* <div
         className="bg-white p-6 rounded-lg max-w-4xl w-[100vh] max-h-[500px] relative overflow-auto"
         onClick={(e) => e.stopPropagation()}
