@@ -37,7 +37,7 @@ export default function Index() {
           rel="noopener noreferrer"
           className="github-link inline-block px-5 py-2.5 my-5 text-lg text-white bg-blue-500 border-none rounded transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105"
           >
-          View Source Code on GitHub
+          View Source Code On GitHub
         </a>
 
         <Form className="flex justify-center mb-10" method="POST">
