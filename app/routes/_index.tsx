@@ -30,7 +30,7 @@ export default function Index() {
   return (
     <div className="container mx-auto p-5">
       <header className="text-center mb-10">
-        <h1 className="text-4xl text-blue-500 mb-4">Recipe Finder</h1>
+        <h1 className="text-4xl text-blue-500 mb-4">Recipe Helper</h1>
         <a
           href="https://github.com/LJMurphyy/recipe-helper"
           target="_blank"
