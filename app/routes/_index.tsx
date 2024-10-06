@@ -7,8 +7,8 @@ import { RecipeDetail } from "~/components/RecipeDetail";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Recipe Helper" },
+    { name: "description", content: "Welcome to Recipe Helper" },
   ];
 };
 
@@ -32,11 +32,11 @@ export default function Index() {
       <header className="text-center mb-10">
         <h1 className="text-4xl text-blue-500 mb-4">Recipe Finder</h1>
         <a
-          href="https://github.com/LJMurphyy/recipe-finder"
+          href="https://github.com/LJMurphyy/recipe-helper"
           target="_blank"
           rel="noopener noreferrer"
           className="github-link inline-block px-5 py-2.5 my-5 text-lg text-white bg-blue-500 border-none rounded transition duration-300 ease-in-out hover:bg-blue-600 hover:scale-105"
-        >
+          >
           View Source Code on GitHub
         </a>
 
