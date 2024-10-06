@@ -59,6 +59,6 @@ export function RecipeDetail({
           <p className="text-base leading-6">{meal.strInstructions}</p>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
